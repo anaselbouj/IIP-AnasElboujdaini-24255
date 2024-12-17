@@ -1,0 +1,20 @@
+﻿<Window x:Class="WpfBieden.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfBieden"
+        mc:Ignorable="d"
+        Title="Bieden" Height="410" Width="800">
+    <Grid>
+        <TextBlock x:Name="txtBtitel" HorizontalAlignment="Left" Margin="130,60,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="35" Width="330" FontSize="25"><Run Language="fr-be" Text="Prachtige vaas! Doe een bod!"/></TextBlock>
+        <Label x:Name="lblnaam" Content="Naam: " HorizontalAlignment="Left" Margin="130,135,0,0" VerticalAlignment="Top" Height="30" Width="55"/>
+        <Label x:Name="lblbod" Content="Bod:" HorizontalAlignment="Left" Margin="130,190,0,0" VerticalAlignment="Top" Height="30" Width="55"/>
+        <TextBox x:Name="txtnaam" HorizontalAlignment="Left" Margin="190,135,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="225" Height="30" Padding="2,2"  VerticalContentAlignment="Center"/>
+        <TextBox x:Name="txtbod" HorizontalAlignment="Left" Margin="295,190,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="30" Padding="2,2" HorizontalContentAlignment="Right" VerticalContentAlignment="Center"/>
+        <Button x:Name="BtnPlaatsBod" Content="Plaats Bod!" HorizontalAlignment="Left" Margin="300,275,0,0" VerticalAlignment="Top" Width="120" Height="35" Click="BtnPlaatsBod_Click"/>
+        <TextBlock x:Name="txtBantwoord" HorizontalAlignment="Left" Margin="130,370,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="30" Width="290" Text="er is nog geen bod uitgebracht"/>
+        <Image x:Name="imgvaas" HorizontalAlignment="Left" Height="230" Margin="555,105,0,0" VerticalAlignment="Top" Width="240" Source="/img/vaas.PNG" />
+
+    </Grid>
+</Window>
