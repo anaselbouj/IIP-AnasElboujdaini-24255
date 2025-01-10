@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleKlinkersSpaties", "C
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleComplexiteit", "ConsoleComplexiteit\ConsoleComplexiteit.csproj", "{1C66EECF-B4D0-4F47-ABF7-FF91E521F7CF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfComplexiteit", "WpfComplexiteit\WpfComplexiteit.csproj", "{E796D37E-02E2-4312-A824-898263364FC3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{1C66EECF-B4D0-4F47-ABF7-FF91E521F7CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1C66EECF-B4D0-4F47-ABF7-FF91E521F7CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1C66EECF-B4D0-4F47-ABF7-FF91E521F7CF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E796D37E-02E2-4312-A824-898263364FC3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E796D37E-02E2-4312-A824-898263364FC3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E796D37E-02E2-4312-A824-898263364FC3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E796D37E-02E2-4312-A824-898263364FC3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
