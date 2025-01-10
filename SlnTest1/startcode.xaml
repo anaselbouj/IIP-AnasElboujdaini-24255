@@ -1,0 +1,14 @@
+    <Label Content="Model:" Padding="0" HorizontalAlignment="Left" Margin="430,30,0,0" VerticalAlignment="Top"/>
+    <ComboBox HorizontalAlignment="Left" Margin="520,30,0,0" VerticalAlignment="Top" Width="220">
+        <ComboBoxItem Content="Antilope Cargo Dames (€ 1.339)" />
+        <ComboBoxItem Content="Antilope Transport Heren (€ 1.349)" />
+        <ComboBoxItem Content="Antilope Elektrisch (€ 2.299)" />
+    </ComboBox>
+    <Label Content="Accu:" Padding="0" HorizontalAlignment="Left" Margin="430,70,0,0" VerticalAlignment="Top"/>
+    <RadioButton Content="standaard (+ € 0,00)" GroupName="grpAccu" HorizontalAlignment="Left" Margin="520,70,0,0" VerticalAlignment="Top"/>
+    <RadioButton Content="groot (+ € 50,00)" GroupName="grpAccu" HorizontalAlignment="Left" Margin="520,90,0,0" VerticalAlignment="Top"/>
+    <Label Content="Accessoires:" Padding="0" HorizontalAlignment="Left" Margin="430,120,0,0" VerticalAlignment="Top"/>
+    <CheckBox Content="Bel (+ € 25,00)" HorizontalAlignment="Left" Margin="520,120,0,0" VerticalAlignment="Top" />
+    <CheckBox Content="Zacht zadel (+ € 30,00)" HorizontalAlignment="Left" Margin="520,140,0,0" VerticalAlignment="Top"/>
+    <CheckBox Content="Bagagedrager (+ € 50,00)" HorizontalAlignment="Left" Margin="520,160,0,0" VerticalAlignment="Top" />
+    <Button Content="Bereken prijs" Padding="8,3" HorizontalAlignment="Left" Margin="525,200,0,0" VerticalAlignment="Top" />
