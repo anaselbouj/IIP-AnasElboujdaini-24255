@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleComplexiteit", "Cons
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfComplexiteit", "WpfComplexiteit\WpfComplexiteit.csproj", "{B89A2289-45BC-4BBD-8A7A-67D7E3E1834B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfCarConfigurator", "WpfCarConfigurator\WpfCarConfigurator.csproj", "{CDE8C45D-2728-4765-8CE9-5482AAEAF1D4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{B89A2289-45BC-4BBD-8A7A-67D7E3E1834B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B89A2289-45BC-4BBD-8A7A-67D7E3E1834B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B89A2289-45BC-4BBD-8A7A-67D7E3E1834B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CDE8C45D-2728-4765-8CE9-5482AAEAF1D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CDE8C45D-2728-4765-8CE9-5482AAEAF1D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CDE8C45D-2728-4765-8CE9-5482AAEAF1D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CDE8C45D-2728-4765-8CE9-5482AAEAF1D4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

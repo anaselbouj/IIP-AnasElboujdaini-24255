@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace WpfComplexiteit
+namespace WpfCarConfigurator
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -25,84 +25,108 @@ namespace WpfComplexiteit
             InitializeComponent();
         }
 
-        static int AantalKarakters(string woord)
+        double basisPrijs = 0;
+
+        private void CmbBmodel_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            return woord.Length;
+            UpdateUI();
+        }
+        private void ChkBvelgen_Checked(object sender, RoutedEventArgs e)
+        {
+            UpdateUI();
+        }
+        private void ChkBmatjes_Checked(object sender, RoutedEventArgs e)
+        {
+            UpdateUI();
+        }
+        private void ChkBaudiospeeker_Checked(object sender, RoutedEventArgs e)
+        {
+            UpdateUI();
+        }
+        private void ChkBvelgen_Unchecked(object sender, RoutedEventArgs e)
+        {
+            UpdateUI();
+        }
+        private void ChkBaudiospeeker_Unchecked(object sender, RoutedEventArgs e)
+        {
+            UpdateUI();
+        }
+        private void ChkBmatjes_Unchecked(object sender, RoutedEventArgs e)
+        {
+            UpdateUI();
+        }
+        private void RdbtnBlauw_Checked(object sender, RoutedEventArgs e)
+        {
+            UpdateUI();
+        }
+        private void RdbtnGroen_Checked(object sender, RoutedEventArgs e)
+        {
+            UpdateUI();
+        }
+        private void RdbtnRood_Checked(object sender, RoutedEventArgs e)
+        {
+            UpdateUI();
+        }
+        private void UpdateUI()
+        {
+            imgCar.Source = new BitmapImage(new Uri(BepaalAfbeeldingPad(), UriKind.Relative));
+            lblTotalePrijs.Content = BerekenPrijs().ToString() + " euro";
+            imgAudio.Opacity = chkBaudiospeeker.IsChecked == true ? 1.0 : 0.3;
+            imgVelgen.Opacity = chkBvelgen.IsChecked == true ? 1.0 : 0.3;
+            imgMatjes.Opacity = chkBmatjes.IsChecked == true ? 1.0 : 0.3;
         }
 
-        static int AantalLettergrepen(string woord)
+        private int BerekenPrijs()
         {
-            int aantalLettergrepen = 0;
-            bool vorigeIsKlinker = false;
-
-            foreach (char karakter in woord)
+            switch (cmbBmodel.SelectedIndex)
             {
-                if (IsKlinker(karakter))
-                {
-                    if (!vorigeIsKlinker)
-                    {
-                        aantalLettergrepen++;
-                    }
-                    vorigeIsKlinker = true;
-                }
-                else
-                {
-                    vorigeIsKlinker = false;
-                }
+                case 0:
+                    basisPrijs = 85000;
+                    break;
+                case 1:
+                    basisPrijs = 72000;
+                    break;
+                case 2:
+                    basisPrijs = 65300;
+                    break;
             }
 
-            return aantalLettergrepen;
+            if (rdbtnBlauw.IsChecked == true)
+                basisPrijs += 0;
+            else if (rdbtnGroen.IsChecked == true)
+                basisPrijs += 250;
+            else if (rdbtnRood.IsChecked == true)
+                basisPrijs += 700;
+
+            if (chkBvelgen.IsChecked == true)
+                basisPrijs += 300;
+
+            if (chkBmatjes.IsChecked == true)
+                basisPrijs += 450;
+
+            if (chkBaudiospeeker.IsChecked == true)
+                basisPrijs += 1250;
+
+            return Convert.ToInt32(basisPrijs);
         }
 
-        static double Complexiteit(string woord)
+        private string BepaalAfbeeldingPad()
         {
-            int aantalKarakters = AantalKarakters(woord);
-            int aantalLettergrepen = AantalLettergrepen(woord);
-            double complexiteit = aantalKarakters / 3.0 + aantalLettergrepen;
-
-            foreach (char karakter in woord)
+            if (cmbBmodel.SelectedItem != null)
             {
-                if (karakter == 'x' || karakter == 'y' || karakter == 'q')
-                {
-                    complexiteit++;
-                }
+                string modelTag = ((ComboBoxItem)cmbBmodel.SelectedItem).Tag.ToString();
+                string kleur = "blauw";
+
+                if (rdbtnBlauw.IsChecked == true)
+                    kleur = "blauw";
+                else if (rdbtnGroen.IsChecked == true)
+                    kleur = "groen";
+                else if (rdbtnRood.IsChecked == true)
+                    kleur = "rood";
+                return $"/img/{modelTag}{kleur}.jpg";
             }
 
-            return complexiteit;
-        }
-
-        static bool IsKlinker(char karakter)
-        {
-            char[] klinkers = { 'a', 'e', 'i', 'o', 'u', 'y', 'A', 'E', 'I', 'O', 'U', 'Y' };
-            foreach (char klinker in klinkers)
-            {
-                if (karakter == klinker)
-                {
-                    return true;
-                }
-            }
-            return false;
-        }
-        private void Btn_analyseer_Click(object sender, RoutedEventArgs e)
-        {
-            string woord = txtTekst.Text;
-
-            if (string.IsNullOrWhiteSpace(woord))
-            {
-                txtB_Bewerking.Text = "Voer een woord in.";
-                return;
-            }
-
-            int aantalKarakters = AantalKarakters(woord);
-            int aantalLettergrepen = AantalLettergrepen(woord);
-            double complexiteit = Complexiteit(woord);
-
-            string resultaatTekst = $@"Aantal karakters: {aantalKarakters}
-Aantal lettergrepen: {aantalLettergrepen}
-Complexiteit: {complexiteit:F1}";
-
-            txtB_Bewerking.Text = resultaatTekst;
+            return string.Empty;
         }
     }
 }
-
